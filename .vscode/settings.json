@@ -1,0 +1,10 @@
+{
+  "files.autoSave": "off",
+  "git.enabled": true,
+  "[javascript]": {
+      "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.formatOnSave": true
+}
+}

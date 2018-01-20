@@ -1,2 +1,8 @@
 {
+  "presets": ["es2015", "react"],
+  "plugins": [
+    [
+      "babel-plugin-transform-require-ignore", { "extensions": [".less", ".css"] }
+    ]
+  ]
 }

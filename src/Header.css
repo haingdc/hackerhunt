@@ -1,0 +1,35 @@
+.App-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 36px 32px;
+}
+
+.App-header a {
+  margin-right: calc(20% - 19px);
+}
+
+#search {
+  width: 100%;
+  position: relative;
+}
+
+#search fieldset > svg {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  z-index: 2;
+}
+
+#search fieldset > svg path {
+  fill: #d5d5d5;
+}
+
+#search input {
+  width: 100%;
+  max-width: calc(70% - 80px);
+  padding-left: 26px;
+  height: 32px;
+  line-height: 32px;
+  color: #797979;
+}

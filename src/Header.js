@@ -1,13 +1,14 @@
 import React from "react";
 import Logo from "./components/Logo";
 import Searchbar from "./components/Searchbar";
+import "./Header.css";
 
 const Header = props => {
   return (
-    <div>
+    <header className="App-header">
       <Logo url={"/"} />
       <Searchbar />
-    </div>
+    </header>
   );
 };
 

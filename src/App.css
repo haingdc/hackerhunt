@@ -8,6 +8,29 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,a,em,ul,ol,li,img,small,strong,fieldset,f
 	vertical-align:baseline
 }
 
+input {
+  height: 36px;
+  line-height: 36px;
+  padding: 0 8px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #d5d5d5;
+  background: #fff;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+input:focus {
+  outline: none;
+}
+
+fieldset {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 body {
   width: 100%;
   height: 100%;
@@ -15,7 +38,6 @@ body {
 }
 
 .App {
-  text-align: center;
   width: 100%;
   max-width: 1080px;
   margin: 0 auto;

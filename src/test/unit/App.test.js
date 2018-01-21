@@ -6,12 +6,20 @@ import { expect } from "chai";
 
 import App from "../../App";
 import Header from "../../Header";
+import TopicList from "../../TopicList";
+import ArticleContainer from "../../ArticleContainer";
 
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("App", () => {
-  it("should render Header", () => {
+  it("should render Header, TopicList, ArticleContainer", () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.containsMatchingElement(<Header />)).be.equal(true);
+    expect(
+      wrapper.containsAllMatchingElements([
+        <Header />,
+        <TopicList />,
+        <ArticleContainer />,
+      ]),
+    ).be.equal(true);
   });
 });

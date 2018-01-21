@@ -17,7 +17,7 @@
     "test": "react-app-rewired test --env=jsdom --no-watchman",
     "eject": "react-scripts eject",
     "test-windows": "set NODE_ENV=development&&mocha --compilers js:babel-core/register src/**/*.test.js",
-    "test-crossplatforms": "cross-env NODE_ENV=development mocha --require setup.js src/*.test.js"
+    "test-crossplatforms": "cross-env NODE_ENV=development mocha --require setup.js src/**/*.test.js"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

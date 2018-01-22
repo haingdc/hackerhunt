@@ -1,3 +1,11 @@
+export const open_source_topics = [
+  { title: "C", className: "c" },
+  { title: "Go", className: "go" },
+  { title: "Ruby", className: "ruby" },
+  { title: "Python", className: "python" },
+  { title: "Javascript", className: "javascript" },
+];
+
 export const topics = [
   { title: "Development", className: "development" },
   { title: "System", className: "system" },
@@ -8,6 +16,10 @@ export const topics = [
   { title: "Awesome Lists", className: "list" },
   { title: "Social", className: "social" },
   { title: "Visual", className: "visual" },
-  { title: "Open source", className: "open-source" },
+  {
+    title: "Open source",
+    className: "open-source",
+    children: open_source_topics,
+  },
   { title: "All topics", className: "all" },
 ];

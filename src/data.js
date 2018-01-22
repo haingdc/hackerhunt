@@ -1,9 +1,9 @@
 export const open_source_topics = [
   { title: "C", className: "c" },
+  { title: "Javascript", className: "javascript" },
   { title: "Go", className: "go" },
   { title: "Ruby", className: "ruby" },
   { title: "Python", className: "python" },
-  { title: "Javascript", className: "javascript" },
 ];
 
 export const topics = [

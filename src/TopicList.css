@@ -1,3 +1,27 @@
+aside {
+  width: 20%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 32px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+aside a {
+  display: block;
+  cursor: pointer;
+  padding: 5px 0;
+  white-space: nowrap;
+}
+
+aside a span {
+  display: inline-block;
+  width: 24px;
+  font-size: 18px;
+  margin-right: 8px;
+  text-align: center;
+}
+
 .thumb {
   display: inline-block;
   width: 16px;

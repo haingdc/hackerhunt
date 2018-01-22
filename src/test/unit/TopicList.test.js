@@ -9,9 +9,9 @@ import { topics } from "../../data";
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("TopicList", () => {
-  it("should render 11 list item", () => {
+  it("should render 11 topic items", () => {
     const newTopics = [...topics];
     const wrapper = shallow(<TopicList topics={newTopics} />);
-    expect(wrapper.find("li").length).to.equal(11);
+    expect(wrapper.find("nav > div.topic").length).to.equal(11);
   });
 });

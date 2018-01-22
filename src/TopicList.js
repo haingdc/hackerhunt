@@ -5,15 +5,17 @@ class TopicList extends Component {
     const { topics } = this.props;
     const liElems = topics.map(function(topic, index) {
       return (
-        <li key={index}>
-          <span className={`thumb ${topic.className}`} />
-          {topic.title}
-        </li>
+        <div key={index} className="topic">
+          <a href="/">
+            <span className={`thumb ${topic.className}`} />
+            {topic.title}
+          </a>
+        </div>
       );
     });
     return (
       <aside>
-        <ul>{liElems}</ul>
+        <nav>{liElems}</nav>
       </aside>
     );
   }

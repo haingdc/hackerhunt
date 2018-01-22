@@ -1,0 +1,56 @@
+.thumb {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  background-image: url("./public/images/icons-001@2x.png");
+  background-size: 627px 16px;
+}
+
+.thumb {
+  background-image: url("./public/images/icons-001.png");
+}
+
+.thumb.development {
+  background-position: -247px 0px;
+}
+
+.thumb.system {
+  background-position: -577px 0px;
+}
+
+.thumb.tools {
+  background-position: -594px 0px;
+}
+
+.thumb.data-science {
+  background-position: -429px 0px;
+}
+
+.thumb.blockchain {
+  background-position: -379px 0px;
+}
+
+.thumb.mobile {
+  background-position: -478px 0px;
+}
+
+.thumb.list {
+  background-position: -462px 0px;
+}
+
+.thumb.social {
+  background-position: -363px 0px;
+}
+
+.thumb.visual {
+  background-position: 0px 0px;
+}
+
+.thumb.open-source {
+  background-position: -165px 0px;
+}
+
+.thumb.all {
+  background-position: -313px 0px;
+}

@@ -82,3 +82,23 @@ aside a span {
 .thumb.all {
   background-position: -313px 0px;
 }
+
+.thumb.c {
+  background-position: -82px 0px;
+}
+
+.thumb.javascript {
+  background-position: -148px 0px;
+}
+
+.thumb.go {
+  background-position: -99px 0px;
+}
+
+.thumb.ruby {
+  background-position: -132px 0px;
+}
+
+.thumb.python {
+  background-position: -115px 0px;
+}

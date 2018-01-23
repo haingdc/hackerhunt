@@ -7,6 +7,10 @@ aside {
   flex-shrink: 0;
 }
 
+.children-topic {
+  padding-left: 32px;
+}
+
 aside a {
   display: block;
   cursor: pointer;

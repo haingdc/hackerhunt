@@ -8,7 +8,7 @@ class TopicList extends Component {
       if (topic.children) {
         children = topic.children.map(function(child, i) {
           return (
-            <div key={i} className="topic">
+            <div key={i} className="children-topic topic">
               <a href="/">
                 <span className={`thumb ${child.className}`} />
                 {child.title}
@@ -17,16 +17,18 @@ class TopicList extends Component {
           );
         });
       }
+
       return (
         <div key={index} className="topic">
           <a href="/">
             <span className={`thumb ${topic.className}`} />
             {topic.title}
-            {children}
           </a>
+          {children}
         </div>
       );
     });
+
     return (
       <aside>
         <nav>{liElems}</nav>

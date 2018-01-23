@@ -2,7 +2,12 @@ import React, { Component } from "react";
 
 class ArticleContainer extends Component {
   render() {
-    return <div>This is ArticleContainer</div>;
+    return (
+      <div>
+        <div className="topic-name">topic name</div>
+        <div className="sort">sort</div>
+      </div>
+    );
   }
 }
 

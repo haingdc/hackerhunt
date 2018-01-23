@@ -18,6 +18,6 @@ describe("TopicList", () => {
   it("open source topic should has 5 children topic", () => {
     const newTopics = [...topics];
     const wrapper = shallow(<TopicList topics={newTopics} />);
-    expect(wrapper.find(".open-source .topic").length).to.equal(5);
+    expect(wrapper.find(".children-topic").length).to.equal(5);
   });
 });

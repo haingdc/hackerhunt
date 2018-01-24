@@ -7,18 +7,18 @@ import { expect } from "chai";
 import App from "../../App";
 import Header from "../../Header";
 import TopicList from "../../TopicList";
-import ArticleContainer from "../../ArticleContainer";
+import List from "../../List";
 
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("App", () => {
-  it("should render Header, TopicList, ArticleContainer", () => {
+  it("should render Header, TopicList, List", () => {
     const wrapper = shallow(<App />);
     expect(
       wrapper.containsAllMatchingElements([
         <Header />,
         <TopicList />,
-        <ArticleContainer />,
+        <List />,
       ]),
     ).be.equal(true);
   });

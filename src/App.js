@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Header from "./Header";
 import TopicList from "./TopicList";
-import ArticleContainer from "./ArticleContainer";
+import List from "./List";
 import { topics } from "./data";
 
 class App extends Component {
@@ -12,7 +12,7 @@ class App extends Component {
         <Header />
         <div className="container">
           <TopicList topics={topics} />
-          <ArticleContainer />
+          <List />
         </div>
       </div>
     );

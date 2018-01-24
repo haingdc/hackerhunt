@@ -1,20 +1,11 @@
 import React, { Component } from "react";
+import HeaderList from "./components/HeaderList";
 
 class List extends Component {
   render() {
     return (
       <div className="list">
-        <header>
-          <h3 className="topic-name">C</h3>
-          <div className="sort">
-            <select>
-              <option value="trending">Trending</option>
-              <option value="date">Date</option>
-              <option value="votes">Votes</option>
-              <option value="comments">Comments</option>
-            </select>
-          </div>
-        </header>
+        <HeaderList />
         <div />
         <footer />
       </div>

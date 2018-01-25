@@ -14,8 +14,20 @@ class ArticleContainer extends Component {
   }
 
   render() {
-    return <div>ArticleContainer me here</div>;
+    const articles = this.state.articles;
+    const articleElems = articles.map((val, ind) => {
+      return <Article key={ind} />;
+    });
+
+    if (articles.length === 0) {
+      return <div>this is nothing</div>;
+    }
+    return <div>{articleElems}</div>;
   }
 }
+
+export const Article = props => {
+  return <h3>this is an article</h3>;
+};
 
 export default ArticleContainer;

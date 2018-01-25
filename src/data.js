@@ -11,26 +11,26 @@ export const topics = [
     title: "Development",
     className: "development",
     children: [
-      { title: "Devops", className: "javascript" },
-      { title: "Databases", className: "c" },
-      { title: "Apis", className: "go" },
-      { title: "Libraries", className: "ruby" },
+      { title: "Devops", className: "devops" },
+      { title: "Databases", className: "databases" },
+      { title: "Apis", className: "api" },
+      { title: "Libraries", className: "library" },
     ],
   },
   {
     title: "System",
     className: "system",
     children: [
-      { title: "Security", className: "c" },
-      { title: "Cloud", className: "javascript" },
-      { title: "Apple", className: "go" },
+      { title: "Security", className: "security" },
+      { title: "Cloud", className: "cloud" },
+      { title: "Apple", className: "apple" },
     ],
   },
   {
     title: "Tools",
     className: "tools",
     children: [
-      { title: "Productivity", className: "c" },
+      { title: "Productivity", className: "productivity" },
     ],
   },
   {

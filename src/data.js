@@ -7,19 +7,66 @@ export const open_source_topics = [
 ];
 
 export const topics = [
-  { title: "Development", className: "development" },
-  { title: "System", className: "system" },
-  { title: "Tools", className: "tools" },
-  { title: "Data Science", className: "data-science" },
-  { title: "Blockchain", className: "blockchain" },
-  { title: "Mobile", className: "mobile" },
-  { title: "Awesome Lists", className: "list" },
-  { title: "Social", className: "social" },
-  { title: "Visual", className: "visual" },
+  {
+    title: "Development",
+    className: "development",
+    children: [
+      { title: "Devops", className: "javascript" },
+      { title: "Databases", className: "c" },
+      { title: "Apis", className: "go" },
+      { title: "Libraries", className: "ruby" },
+    ],
+  },
+  {
+    title: "System",
+    className: "system",
+    children: [
+      { title: "Security", className: "c" },
+      { title: "Cloud", className: "javascript" },
+      { title: "Apple", className: "go" },
+    ],
+  },
+  {
+    title: "Tools",
+    className: "tools",
+    children: [
+      { title: "Productivity", className: "c" },
+    ],
+  },
+  {
+    title: "Data Science",
+    className: "data-science",
+  },
+  {
+    title: "Blockchain",
+    className: "blockchain",
+  },
+  {
+    title: "Mobile",
+    className: "mobile",
+  },
+  {
+    title: "Awesome Lists",
+    className: "list",
+  },
+  {
+    title: "Social",
+    className: "social",
+  },
+  {
+    title: "Visual",
+    className: "visual",
+  },
   {
     title: "Open source",
     className: "open-source",
-    children: open_source_topics,
+    children: [
+      { title: "C", className: "c" },
+      { title: "Javascript", className: "javascript" },
+      { title: "Go", className: "go" },
+      { title: "Ruby", className: "ruby" },
+      { title: "Python", className: "python" },
+    ],
   },
   { title: "All topics", className: "all" },
 ];

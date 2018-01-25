@@ -1,3 +1,4 @@
+require("source-map-support");
 require("babel-register")();
 const { JSDOM } = require("jsdom");
 

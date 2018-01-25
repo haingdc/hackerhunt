@@ -5,7 +5,7 @@ import ArticleContainer from "./ArticleContainer";
 class List extends Component {
   render() {
     return (
-      <div className="list">
+      <div className="list-container">
         <HeaderList />
         <ArticleContainer />
         <footer />

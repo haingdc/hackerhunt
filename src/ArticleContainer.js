@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { articles } from "./data";
+import Article from "./components/Article";
 
 class ArticleContainer extends Component {
   constructor(props) {
@@ -11,6 +12,10 @@ class ArticleContainer extends Component {
   getArticles() {
     const data = [...articles["data"]];
     this.setState({ articles: data });
+  }
+
+  componentDidMount() {
+    this.getArticles();
   }
 
   render() {
@@ -25,9 +30,5 @@ class ArticleContainer extends Component {
     return <div>{articleElems}</div>;
   }
 }
-
-export const Article = props => {
-  return <h3>this is an article</h3>;
-};
 
 export default ArticleContainer;

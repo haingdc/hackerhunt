@@ -3,16 +3,17 @@ import React from "react";
 import Enzyme, { shallow, mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import { expect } from "chai";
-import HeaderList from "../../components/HeaderList";
-import List from "../../List";
-import ArticleContainer, { Article } from "../../ArticleContainer";
+import ArticleContainer from "../../ArticleContainer";
+import Article from "../../components/Article";
 import { articles } from "../../data";
 
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("ArticleContainer", () => {
   it("should start with empty list", () => {
-    const wrapper = shallow(<ArticleContainer />);
+    const wrapper = shallow(<ArticleContainer />, {
+      disableLifecycleMethods: true,
+    });
     expect(wrapper.state("articles")).to.eql([]);
   });
 

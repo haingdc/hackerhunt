@@ -8,15 +8,15 @@ import { articles as articlesMock } from "../../data";
 
 describe("Article", () => {
   it("the children of <article> tag should be <a> tag and <div> tag", () => {
-    const wrapper = shallow(<Article />);
+    const article = [...articlesMock.data][0];
+    const wrapper = shallow(<Article data={article} />);
     expect(wrapper.find("article > a")).to.have.length(1);
     expect(wrapper.find("article > a + div")).to.have.length(1);
   });
 
   it("should display vote sign", () => {
-    const articles = [...articlesMock.data];
-    articles[0].votes = "5";
-    const wrapper = shallow(<Article />);
+    const article = [...articlesMock.data][0];
+    const wrapper = shallow(<Article data={article} />);
     expect(
       wrapper
         .find("article")
@@ -26,5 +26,19 @@ describe("Article", () => {
         .find("em")
         .text(),
     ).to.equal("▲");
+  });
+
+  it("the vote number should be ▲5", () => {
+    const article = { ...articlesMock.data[0] };
+    article.votes = "5";
+    const wrapper = shallow(<Article data={article} />);
+    expect(
+      wrapper
+        .find("article")
+        .at(0)
+        .find("span")
+        .at(0)
+        .text(),
+    ).to.equal("▲5");
   });
 });

@@ -21,7 +21,7 @@ class ArticleContainer extends Component {
   render() {
     const articles = this.state.articles;
     const articleElems = articles.map((val, ind) => {
-      return <Article key={ind} />;
+      return <Article key={ind} data={val} />;
     });
 
     if (articles.length === 0) {

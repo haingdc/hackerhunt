@@ -120,30 +120,20 @@ aside a span {
 }
 
 .thumb.security {
-
-    background-position: -544px 0px;
-
+  background-position: -544px 0px;
 }
 
 .thumb.cloud {
-
-    background-position: -412px 0px;
-
+  background-position: -412px 0px;
 }
 
 .thumb.apple {
-
-    background-position: -33px 0px;
-
+  background-position: -33px 0px;
 }
 
 .thumb.productivity {
-
-    background-position: -528px 0px;
-
+  background-position: -528px 0px;
 }
-
-
 
 .list-container {
   -webkit-box-flex: 1;
@@ -175,4 +165,48 @@ h3 {
   position: relative;
   width: 86px;
   margin-top: -6px;
+}
+
+div.list-container article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+div.list-container article > a {
+  color: #2f2f2f;
+  width: 74px;
+  text-align: left;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+div.list-container article > a span {
+  font-size: 18px;
+  line-height: 24px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+div.list-container article > a em {
+  display: inline-block;
+  width: 16px;
+  text-align: center;
+}
+
+div.list-container article > a span:last-child {
+  color: #797979;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+div.list-container article > a svg {
+  margin-bottom: -1px;
+}
+
+div.list-container article > a path {
+  fill: #797979;
 }

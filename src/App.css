@@ -38,6 +38,14 @@ body {
   color: #2f2f2f;
 }
 
+h1,
+h2 {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 8px;
+  font-weight: 400;
+}
+
 .App {
   width: 100%;
   max-width: 1080px;

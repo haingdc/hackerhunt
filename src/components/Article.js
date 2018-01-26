@@ -3,9 +3,19 @@ import dateFns from "date-fns";
 
 const Article = props => {
   const { votes, comments, title, desc, author } = props.data;
-  let { date } = props.data;
+  let { date, tags } = props.data;
   date = new Date(Number(date) * 1000);
   date = dateFns.distanceInWords(date, new Date()) + " ago";
+
+  tags = tags.split(",");
+  tags = tags.map((val, ind) => {
+    val = val.trim();
+    return (
+      <a className="tag" href="#" key={ind}>
+        {val}
+      </a>
+    );
+  });
 
   return (
     <article>
@@ -33,6 +43,7 @@ const Article = props => {
           <time>{date}</time>
           &nbsp;by&nbsp;
           <a href="#">{author}</a>
+          {tags}
         </summary>
       </div>
     </article>

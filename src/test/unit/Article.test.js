@@ -106,4 +106,28 @@ describe("Article", () => {
         .text(),
     ).to.equal("Mr.Walrus");
   });
+
+  it("An article should display tags", () => {
+    const article = { ...articlesMock.data[0] };
+    article.tags = "blue, black, green";
+    const wrapper = shallow(<Article data={article} />);
+    expect(
+      wrapper
+        .find("summary a")
+        .at(1)
+        .text(),
+    ).to.equal("blue");
+    expect(
+      wrapper
+        .find("summary a")
+        .at(2)
+        .text(),
+    ).to.equal("black");
+    expect(
+      wrapper
+        .find("summary a")
+        .at(3)
+        .text(),
+    ).to.equal("green");
+  });
 });

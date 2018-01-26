@@ -3,7 +3,11 @@ import React from "react";
 const Article = props => {
   return (
     <article>
-      <a href="#">votes</a>
+      <a href="#">
+        <span>
+          <em>▲</em>
+        </span>
+      </a>
       <div>Article</div>
     </article>
   );

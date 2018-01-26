@@ -83,4 +83,15 @@ describe("Article", () => {
         .text(),
     ).to.equal("All I want is you");
   });
+
+  it("An article should display date", () => {
+    const article = { ...articlesMock.data[0] };
+    const wrapper = shallow(<Article data={article} />);
+    expect(
+      wrapper
+        .find("time")
+        .at(0)
+        .text(),
+    ).to.equal("3 days ago");
+  });
 });

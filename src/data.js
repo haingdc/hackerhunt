@@ -29,9 +29,7 @@ export const topics = [
   {
     title: "Tools",
     className: "tools",
-    children: [
-      { title: "Productivity", className: "productivity" },
-    ],
+    children: [{ title: "Productivity", className: "productivity" }],
   },
   {
     title: "Data Science",

@@ -2,7 +2,7 @@ import React from "react";
 import dateFns from "date-fns";
 
 const Article = props => {
-  const { votes, comments, title, desc } = props.data;
+  const { votes, comments, title, desc, author } = props.data;
   let { date } = props.data;
   date = new Date(Number(date) * 1000);
   date = dateFns.distanceInWords(date, new Date()) + " ago";
@@ -31,6 +31,8 @@ const Article = props => {
         <p>{desc}</p>
         <summary>
           <time>{date}</time>
+          &nbsp;by&nbsp;
+          <a href="#">{author}</a>
         </summary>
       </div>
     </article>

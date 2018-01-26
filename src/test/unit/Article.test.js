@@ -94,4 +94,16 @@ describe("Article", () => {
         .text(),
     ).to.equal("3 days ago");
   });
+
+  it("An article should display author", () => {
+    const article = { ...articlesMock.data[0] };
+    article.author = "Mr.Walrus";
+    const wrapper = shallow(<Article data={article} />);
+    expect(
+      wrapper
+        .find("summary a")
+        .at(0)
+        .text(),
+    ).to.equal("Mr.Walrus");
+  });
 });

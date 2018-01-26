@@ -69,4 +69,18 @@ describe("Article", () => {
         .text(),
     ).to.equal("All I want is you");
   });
+
+  it("An article show display description", () => {
+    const article = { ...articlesMock.data[0] };
+    article.desc = "All I want is you";
+    const wrapper = shallow(<Article data={article} />);
+    expect(
+      wrapper
+        .find("article > a + div")
+        .at(0)
+        .children("p")
+        .at(0)
+        .text(),
+    ).to.equal("All I want is you");
+  });
 });

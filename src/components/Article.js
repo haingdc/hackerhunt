@@ -1,7 +1,7 @@
 import React from "react";
 
 const Article = props => {
-  const { votes, comments, title } = props.data;
+  const { votes, comments, title, desc } = props.data;
   return (
     <article>
       <a href="#">
@@ -23,6 +23,7 @@ const Article = props => {
       </a>
       <div>
         <h2>{title}</h2>
+        <p>{desc}</p>
       </div>
     </article>
   );

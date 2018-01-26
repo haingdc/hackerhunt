@@ -41,4 +41,18 @@ describe("Article", () => {
         .text(),
     ).to.equal("▲5");
   });
+
+  it("the comment number should be 5", () => {
+    const article = { ...articlesMock.data[0] };
+    article.comments = "5";
+    const wrapper = shallow(<Article data={article} />);
+    expect(
+      wrapper
+        .find("article")
+        .at(0)
+        .find("span")
+        .at(1)
+        .text(),
+    ).to.equal("5");
+  });
 });

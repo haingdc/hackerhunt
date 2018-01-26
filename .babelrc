@@ -11,6 +11,7 @@
     "react"
   ],
   "plugins": [
+    "transform-object-rest-spread",
     [
       "babel-plugin-transform-require-ignore", { "extensions": [".css"] }
     ]

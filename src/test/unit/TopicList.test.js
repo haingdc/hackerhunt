@@ -14,10 +14,4 @@ describe("TopicList", () => {
     const wrapper = shallow(<TopicList topics={newTopics} />);
     expect(wrapper.find("nav > div.topic").length).to.equal(11);
   });
-
-  // it("open source topic should has 5 children topic", () => {
-  //   const newTopics = [...topics];
-  //   const wrapper = shallow(<TopicList topics={newTopics} />);
-  //   expect(wrapper.find(".children-topic").length).to.equal(5);
-  // });
 });

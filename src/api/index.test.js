@@ -34,4 +34,19 @@ describe("getArticles", () => {
       done();
     });
   });
+
+  it("parses error responses", done => {
+    const error = new Error("something bad");
+    axios.get = url => {
+      return Promise.reject(error);
+    };
+
+    getArticles()
+      .then("fuck!")
+      // .then(expect.fail)
+      .catch(e => {
+        expect(e).to.eql(error);
+        done();
+      });
+  });
 });

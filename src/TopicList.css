@@ -184,6 +184,10 @@ div.list-container article > a {
   flex-shrink: 0;
 }
 
+div.list-container article > a:hover em {
+  color: #f60;
+}
+
 div.list-container article > a span {
   font-size: 18px;
   line-height: 24px;

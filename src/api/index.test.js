@@ -42,8 +42,7 @@ describe("getArticles", () => {
     };
 
     getArticles()
-      .then("fuck!")
-      // .then(expect.fail)
+      .then(expect.fail)
       .catch(e => {
         expect(e).to.eql(error);
         done();

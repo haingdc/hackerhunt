@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import HeaderList from "./components/HeaderList";
 import ArticleContainer from "./ArticleContainer";
+import "./List.css";
 
 class List extends Component {
   render() {

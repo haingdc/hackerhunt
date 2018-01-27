@@ -19,4 +19,9 @@ describe("List", () => {
       ]),
     ).to.equal(true);
   });
+
+  it("should display 'Previous Day' button", () => {
+    const wrapper = shallow(<List />);
+    expect(wrapper.find(".list-container > footer > a").length).to.equal(1);
+  });
 });

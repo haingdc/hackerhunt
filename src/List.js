@@ -4,14 +4,18 @@ import ArticleContainer from "./ArticleContainer";
 
 class List extends Component {
   render() {
+    const { page } = this.props;
     return (
       <div className="list-container">
         <HeaderList />
         <ArticleContainer />
-        <footer />
+        <footer>
+          <a href={`/page/` + page}>PREVIOUS DAYS</a>
+        </footer>
       </div>
     );
   }
 }
+[];
 
 export default List;

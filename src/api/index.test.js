@@ -12,4 +12,13 @@ describe("getArticles", () => {
     };
     getArticles(64);
   });
+
+  it("builds the url with a default page", done => {
+    axios.get = url => {
+      expect(url).to.equal("https://hackerhunt.co/api/daily/0");
+      done();
+      return Promise.resolve({ data: {}, headers: {} });
+    };
+    getArticles();
+  });
 });

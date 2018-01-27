@@ -4,22 +4,17 @@ import Enzyme, { shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import { expect } from "chai";
 
-import App from "../../App";
-import Header from "../../Header";
+import Home from "../../Home";
 import TopicList from "../../TopicList";
 import List from "../../List";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe("App", () => {
-  it("should render Header, TopicList, List", () => {
-    const wrapper = shallow(<App />);
+describe("Home", () => {
+  it("should render TopicList, List", () => {
+    const wrapper = shallow(<Home />);
     expect(
-      wrapper.containsAllMatchingElements([
-        <Header />,
-        <TopicList />,
-        <List />,
-      ]),
+      wrapper.containsAllMatchingElements([<TopicList />, <List />]),
     ).be.equal(true);
   });
 });

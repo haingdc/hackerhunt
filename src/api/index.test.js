@@ -21,4 +21,17 @@ describe("getArticles", () => {
     };
     getArticles();
   });
+
+  it("parses successful response", done => {
+    axios.get = url => {
+      return Promise.resolve({
+        data: "the data",
+      });
+    };
+
+    getArticles().then(articles => {
+      expect(articles.data).to.equal("the data");
+      done();
+    });
+  });
 });

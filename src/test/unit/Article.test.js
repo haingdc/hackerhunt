@@ -5,6 +5,7 @@ import Adapter from "enzyme-adapter-react-16";
 import { expect } from "chai";
 import Article from "../../components/Article";
 import { articles as articlesMock } from "../../data";
+import dateFns from "date-fns";
 
 describe("Article", () => {
   it("the children of <article> tag should be <a> tag and <div> tag", () => {
@@ -86,6 +87,7 @@ describe("Article", () => {
 
   it("An article should display date", () => {
     const article = { ...articlesMock.data[0] };
+    article.date = (dateFns.subDays(new Date(), 3).getTime() / 1000).toString();
     const wrapper = shallow(<Article data={article} />);
     expect(
       wrapper

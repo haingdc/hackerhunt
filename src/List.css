@@ -14,3 +14,8 @@ div.list-container footer > a {
   text-transform: uppercase;
   font-size: 14px;
 }
+
+div.list-container footer > a:hover {
+  border-color: #f60;
+  color: #f60;
+}

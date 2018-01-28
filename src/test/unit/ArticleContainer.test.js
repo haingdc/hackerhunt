@@ -12,10 +12,10 @@ Enzyme.configure({ adapter: new Adapter() });
 
 describe("ArticleContainer", () => {
   it("should start with empty list", () => {
-    const wrapper = shallow(<ArticleContainer />, {
+    const wrapper = shallow(<ArticleContainer articles={[]} />, {
       disableLifecycleMethods: true,
     });
-    expect(wrapper.state("articles")).to.eql([]);
+    expect(wrapper.instance().props.articles).to.eql([]);
   });
 
   it("get articles", () => {

@@ -13,7 +13,7 @@ class Home extends Component {
 
   fetchArticles = page => {
     API.getArticles(page).then(res => {
-      this.setState({ articles: res.data });
+      this.setState({ articles: res.data.data });
     });
   };
 

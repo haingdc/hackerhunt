@@ -17,4 +17,9 @@ describe("Home", () => {
       wrapper.containsAllMatchingElements([<TopicList />, <List />]),
     ).be.equal(true);
   });
+
+  it("should have empty articles", () => {
+    const wrapper = shallow(<Home />);
+    expect(wrapper.state("articles")).to.eql([]);
+  });
 });

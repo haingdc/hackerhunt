@@ -21,7 +21,8 @@ describe("ArticleContainer", () => {
   });
 
   it("should render 16 Articles", () => {
-    const wrapper = shallow(<ArticleContainer articles={articlesMock.data} />, {
+    const articles = _.cloneDeep(articlesMock.data);
+    const wrapper = shallow(<ArticleContainer articles={articles} />, {
       disableLifecycleMethods: true,
     });
     expect(wrapper.find(Article)).to.have.length(16);

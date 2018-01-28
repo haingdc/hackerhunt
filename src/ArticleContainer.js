@@ -1,25 +1,13 @@
 import React, { Component } from "react";
-import { articles } from "./data";
 import Article from "./components/Article";
 
 class ArticleContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { articles: [] };
-    this.getArticles = this.getArticles.bind(this);
-  }
-
-  getArticles() {
-    const data = [...articles["data"]];
-    this.setState({ articles: data });
-  }
-
   componentDidMount() {
-    this.getArticles();
+    this.props.fetchArticles();
   }
 
   render() {
-    const articles = this.state.articles;
+    const { articles } = this.props;
     const articleElems = articles.map((val, ind) => {
       return <Article key={ind} data={val} />;
     });

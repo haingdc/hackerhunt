@@ -18,11 +18,10 @@ describe("ArticleContainer", () => {
     expect(wrapper.instance().props.articles).to.eql([]);
   });
 
-  it("get articles", () => {
-    const wrapper = mount(<ArticleContainer />);
-    wrapper.instance().getArticles();
-    wrapper.update();
-    expect(wrapper.state("articles")).to.eql(articles.data);
+  it("should render 16 Articles", () => {
+    const wrapper = shallow(<ArticleContainer articles={articles.data} />, {
+      disableLifecycleMethods: true,
+    });
     expect(wrapper.find(Article)).to.have.length(16);
   });
 

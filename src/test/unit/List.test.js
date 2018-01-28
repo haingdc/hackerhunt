@@ -36,4 +36,13 @@ describe("Previous Days button", () => {
         .prop("href"),
     ).to.equal("/page/1");
   });
+
+  it("pass onPreviousDays to 'Previous Days' button", () => {
+    const wrapper = shallow(<List />);
+    const prevBtn = wrapper.find("footer > a");
+    const onPreviousDays = wrapper.instance().onPreviousDays;
+
+    expect(prevBtn.prop("onClick")).to.not.undefined;
+    expect(prevBtn.prop("onClick")).to.eql(onPreviousDays);
+  });
 });

@@ -17,7 +17,7 @@ class Home extends Component {
     });
   };
 
-  increasePageNumber = () => {
+  previousDays = () => {
     const { page } = this.state;
     this.setState({ page: page + 1 });
   };

@@ -23,9 +23,16 @@ describe("Home", () => {
     expect(wrapper.state("articles")).to.eql([]);
   });
 
-  it("increase page number", () => {
+  it("increase page number from 0 to 1", () => {
     const wrapper = shallow(<Home />);
     wrapper.instance().increasePageNumber();
     expect(wrapper.state("page")).to.equal(1);
+  });
+
+  it("increase page number from 1 to 2", () => {
+    const wrapper = shallow(<Home />);
+    wrapper.setState({ page: 1 });
+    wrapper.instance().increasePageNumber();
+    expect(wrapper.state("page")).to.equal(2);
   });
 });

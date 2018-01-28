@@ -17,6 +17,11 @@ class Home extends Component {
     });
   };
 
+  increasePageNumber = () => {
+    const { page } = this.state;
+    this.setState({ page: page + 1 });
+  };
+
   render() {
     const { articles, page } = this.state;
     return (

@@ -22,4 +22,10 @@ describe("Home", () => {
     const wrapper = shallow(<Home />);
     expect(wrapper.state("articles")).to.eql([]);
   });
+
+  it("increase page number", () => {
+    const wrapper = shallow(<Home />);
+    wrapper.instance().increasePageNumber();
+    expect(wrapper.state("page")).to.equal(1);
+  });
 });

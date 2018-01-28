@@ -25,3 +25,15 @@ describe("List", () => {
     expect(wrapper.find(".list-container > footer > a").length).to.equal(1);
   });
 });
+
+describe("Previous Days button", () => {
+  it("should link to page 1", () => {
+    const wrapper = shallow(<List page={1} />);
+    expect(
+      wrapper
+        .find("footer > a")
+        .at(0)
+        .prop("href"),
+    ).to.equal("/page/1");
+  });
+});

@@ -8,7 +8,7 @@ import request from "request";
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = { articles: [] };
+    this.state = { articles: [], page: 0 };
   }
 
   fetchArticles = page => {
@@ -18,11 +18,15 @@ class Home extends Component {
   };
 
   render() {
-    const { articles } = this.state;
+    const { articles, page } = this.state;
     return (
       <React.Fragment>
         <TopicList topics={topics} />
-        <List articles={articles} fetchArticles={this.fetchArticles} />
+        <List
+          articles={articles}
+          page={page}
+          fetchArticles={this.fetchArticles}
+        />
       </React.Fragment>
     );
   }

@@ -28,7 +28,7 @@ describe("List", () => {
 
 describe("Previous Days button", () => {
   it("should link to page 1", () => {
-    const wrapper = shallow(<List page={1} />);
+    const wrapper = shallow(<List page={0} />);
     expect(
       wrapper
         .find("footer > a")

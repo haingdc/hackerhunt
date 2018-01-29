@@ -8,7 +8,8 @@ class List extends Component {
 
   render() {
     const { articles, fetchArticles } = this.props;
-    const { page } = this.props;
+    let { page } = this.props;
+    page++;
     return (
       <div className="list-container">
         <HeaderList />

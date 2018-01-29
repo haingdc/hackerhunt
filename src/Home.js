@@ -31,6 +31,7 @@ class Home extends Component {
           articles={articles}
           page={page}
           fetchArticles={this.fetchArticles}
+          previousDays={this.previousDays}
         />
       </React.Fragment>
     );

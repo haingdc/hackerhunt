@@ -4,7 +4,10 @@ import ArticleContainer from "./ArticleContainer";
 import "./List.css";
 
 class List extends Component {
-  onPreviousDays = event => {};
+  onPreviousDays = event => {
+    event.preventDefault();
+    this.props.previousDays();
+  };
 
   render() {
     const { articles, fetchArticles } = this.props;

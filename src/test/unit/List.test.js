@@ -3,6 +3,8 @@ import React from "react";
 import Enzyme, { shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import { expect } from "chai";
+import { spy } from "sinon";
+
 import HeaderList from "../../components/HeaderList";
 import List from "../../List";
 import ArticleContainer from "../../ArticleContainer";
@@ -44,5 +46,13 @@ describe("Previous Days button", () => {
 
     expect(prevBtn.prop("onClick")).to.not.undefined;
     expect(prevBtn.prop("onClick")).to.eql(onPreviousDays);
+  });
+
+  it("props.previousDays() should be called when click on this button", () => {
+    const previousDaysSpy = spy();
+    const wrapper = shallow(<List previousDays={previousDaysSpy} />);
+    const prevBtn = wrapper.find("footer > a");
+    prevBtn.simulate("click", { preventDefault: () => {} });
+    expect(previousDaysSpy.calledOnce).to.equal(true);
   });
 });

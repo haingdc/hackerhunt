@@ -8,13 +8,21 @@ import request from "request";
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = { articles: [], page: 0 };
+    this.state = { articles: [], page: 0, errors: {} };
   }
 
   fetchArticles = page => {
-    API.getArticles(page).then(res => {
-      this.setState({ articles: res.data.data });
-    });
+    API.getArticles(page)
+      .then(res => {
+        this.setState({ articles: res.data.data });
+      })
+      .catch(err => {
+        if (err.message === "Network Error") {
+          const { errors } = this.state;
+          errors.network = err;
+          this.setState({ errors });
+        }
+      });
   };
 
   previousDays = () => {

@@ -2,7 +2,9 @@ import React from "react";
 import dateFns from "date-fns";
 
 const Article = props => {
-  const { votes, comments, title, desc, author } = props.data;
+  console.log(props.data);
+
+  const { id, votes, comments, link, title, desc, author } = props.data;
   let { date, tags } = props.data;
   date = new Date(Number(date) * 1000);
   date = dateFns.distanceInWords(date, new Date()) + " ago";
@@ -11,7 +13,7 @@ const Article = props => {
   tags = tags.map((val, ind) => {
     val = val.trim();
     return (
-      <a className="tag" href="#" key={ind}>
+      <a className="tag" href={`/topic/${val}/trending`} key={ind}>
         {val}
       </a>
     );
@@ -19,7 +21,7 @@ const Article = props => {
 
   return (
     <article>
-      <a href="#">
+      <a href={"https://news.ycombinator.com/item?id=" + id}>
         <span>
           <em>▲</em>
           {votes}
@@ -37,12 +39,16 @@ const Article = props => {
         </span>
       </a>
       <div>
-        <h2>{title}</h2>
+        <h2>
+          <a href={link} target="_blank">
+            {title}
+          </a>
+        </h2>
         <p>{desc}</p>
         <summary>
           <time>{date}</time>
           &nbsp;by&nbsp;
-          <a href="#">{author}</a>
+          <a href={"/author/" + author}>{author}</a>
           {tags}
         </summary>
       </div>

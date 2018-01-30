@@ -19,3 +19,11 @@ div.list-container footer > a:hover {
   border-color: #f60;
   color: #f60;
 }
+
+div.list-container article h2 a:hover {
+  color: #f60;
+}
+
+div.list-container article summary a:hover {
+  color: #f60;
+}

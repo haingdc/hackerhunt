@@ -30,6 +30,11 @@ describe("ArticleContainer", () => {
 });
 
 describe("ArticleContainer Loading...", () => {
+  it("loading prop should be undefined", () => {
+    const wrapper = shallow(<ArticleContainer articles={[]} />);
+    expect(wrapper.prop("loading")).to.equal(undefined);
+  });
+
   it("should display 'Loading...'", () => {
     const wrapper = shallow(<ArticleContainer loading={true} />);
     expect(wrapper.find("div").text()).to.equal("Loading...");

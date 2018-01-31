@@ -3,7 +3,11 @@ import Article from "./components/Article";
 
 class ArticleContainer extends Component {
   render() {
-    const { articles } = this.props;
+    const { loading, articles } = this.props;
+
+    if (loading) {
+      return <div>Loading...</div>;
+    }
     const articleElems = articles.map((val, ind) => {
       return <Article key={ind} data={val} />;
     });

@@ -28,3 +28,10 @@ describe("ArticleContainer", () => {
     expect(wrapper.find(Article)).to.have.length(16);
   });
 });
+
+describe("ArticleContainer Loading...", () => {
+  it("should display 'Loading...'", () => {
+    const wrapper = shallow(<ArticleContainer loading={true} />);
+    expect(wrapper.find("div").text()).to.equal("Loading...");
+  });
+});

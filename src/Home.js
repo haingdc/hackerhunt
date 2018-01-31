@@ -3,12 +3,15 @@ import List from "./List";
 import TopicList from "./TopicList";
 import { topics } from "./data";
 import * as API from "./api/index";
-import request from "request";
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = { articles: [], page: 0, errors: {} };
+  }
+
+  componentDidMount() {
+    this.fetchArticles();
   }
 
   fetchArticles = page => {

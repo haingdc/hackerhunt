@@ -11,14 +11,13 @@ class List extends Component {
 
   render() {
     const { articles, fetchArticles } = this.props;
-    let { page } = this.props;
-    page++;
+    const prevPage = this.props.page + 1;
     return (
       <div className="list-container">
         <HeaderList />
         <ArticleContainer articles={articles} fetchArticles={fetchArticles} />
         <footer>
-          <a href={`/page/` + page} onClick={this.onPreviousDays}>
+          <a href={`/page/` + prevPage} onClick={this.onPreviousDays}>
             PREVIOUS DAYS
           </a>
         </footer>
@@ -26,6 +25,5 @@ class List extends Component {
     );
   }
 }
-[];
 
 export default List;

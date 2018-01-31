@@ -27,15 +27,4 @@ describe("ArticleContainer", () => {
     });
     expect(wrapper.find(Article)).to.have.length(16);
   });
-
-  it("calls componentDidMount", () => {
-    const articles = _.cloneDeep(articlesMock.data);
-    sinon.spy(ArticleContainer.prototype, "componentDidMount");
-    const wrapper = mount(
-      <ArticleContainer articles={articles} fetchArticles={() => {}} />,
-    );
-    expect(ArticleContainer.prototype.componentDidMount.calledOnce).to.equal(
-      true,
-    );
-  });
 });

@@ -2,8 +2,6 @@ import React from "react";
 import dateFns from "date-fns";
 
 const Article = props => {
-  console.log(props.data);
-
   const { id, votes, comments, link, title, desc, author } = props.data;
   let { date, tags } = props.data;
   date = new Date(Number(date) * 1000);

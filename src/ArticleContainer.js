@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import Article from "./components/Article";
 
 class ArticleContainer extends Component {
-  componentDidMount() {
-    this.props.fetchArticles();
-  }
-
   render() {
     const { articles } = this.props;
     const articleElems = articles.map((val, ind) => {

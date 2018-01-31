@@ -3,6 +3,8 @@ import React from "react";
 import Enzyme, { shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import { expect } from "chai";
+import sinon from "sinon";
+import _ from "lodash";
 
 import Home from "../../Home";
 import TopicList from "../../TopicList";
@@ -34,5 +36,11 @@ describe("Home", () => {
     wrapper.setState({ page: 1 });
     wrapper.instance().previousDays();
     expect(wrapper.state("page")).to.equal(2);
+  });
+
+  it("calls componentDidMount", () => {
+    sinon.spy(Home.prototype, "componentDidMount");
+    const wrapper = shallow(<Home />);
+    expect(Home.prototype.componentDidMount.calledOnce).to.equal(true);
   });
 });

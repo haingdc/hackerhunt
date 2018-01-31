@@ -25,29 +25,27 @@ describe("Home", () => {
     expect(wrapper.state("articles")).to.eql([]);
   });
 
-  it("increase page number from 0 to 1", () => {
-    const wrapper = shallow(<Home />);
-    wrapper.instance().previousDays();
-    expect(wrapper.state("page")).to.equal(1);
-  });
-
-  it("increase page number from 1 to 2", () => {
-    const wrapper = shallow(<Home />);
-    wrapper.setState({ page: 1 });
-    wrapper.instance().previousDays();
-    expect(wrapper.state("page")).to.equal(2);
-  });
-
   it("calls componentDidMount", () => {
     const methodSpy = sinon.spy(Home.prototype, "componentDidMount");
     const wrapper = shallow(<Home />);
     expect(methodSpy.calledOnce).to.equal(true);
+    methodSpy.restore();
   });
 
-  it("calls fetchArtciles(0)", () => {
+  it("calls fetchArticles(0)", () => {
     const methodSpy = sinon.spy(Home.prototype, "fetchArticles");
     const wrapper = shallow(<Home />);
 
     expect(methodSpy.calledWith(0)).to.equal(true);
+    methodSpy.restore();
+  });
+
+  it("calls fetchArticles after componentDidMount", () => {
+    const fetchSpy = sinon.spy(Home.prototype, "fetchArticles");
+    const didMountSpy = sinon.spy(Home.prototype, "componentDidMount");
+    const wrapper = shallow(<Home />);
+    expect(fetchSpy.calledAfter(didMountSpy)).to.equal(true);
+    fetchSpy.restore();
+    didMountSpy.restore();
   });
 });

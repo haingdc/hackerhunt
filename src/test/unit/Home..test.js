@@ -39,8 +39,15 @@ describe("Home", () => {
   });
 
   it("calls componentDidMount", () => {
-    sinon.spy(Home.prototype, "componentDidMount");
+    const methodSpy = sinon.spy(Home.prototype, "componentDidMount");
     const wrapper = shallow(<Home />);
-    expect(Home.prototype.componentDidMount.calledOnce).to.equal(true);
+    expect(methodSpy.calledOnce).to.equal(true);
+  });
+
+  it("calls fetchArtciles(0)", () => {
+    const methodSpy = sinon.spy(Home.prototype, "fetchArticles");
+    const wrapper = shallow(<Home />);
+
+    expect(methodSpy.calledWith(0)).to.equal(true);
   });
 });

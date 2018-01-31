@@ -8,16 +8,17 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = { articles: [], page: 0, errors: {} };
+    this.fetchArticles = this.fetchArticles.bind(this);
   }
 
   componentDidMount() {
-    this.fetchArticles();
+    this.fetchArticles(0);
   }
 
-  fetchArticles = page => {
+  fetchArticles(page) {
     API.getArticles(page)
       .then(res => {
-        this.setState({ articles: res.data.data });
+        this.setState({ articles: res.data.data, page: page });
       })
       .catch(err => {
         if (err.message === "Network Error") {
@@ -26,11 +27,11 @@ class Home extends Component {
           this.setState({ errors });
         }
       });
-  };
+  }
 
   previousDays = () => {
     const { page } = this.state;
-    this.setState({ page: page + 1 });
+    this.fetchArticles(page + 1);
   };
 
   render() {

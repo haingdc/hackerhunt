@@ -9,6 +9,7 @@ import _ from "lodash";
 import ArticleContainer from "../../ArticleContainer";
 import Article from "../../components/Article";
 import { articles as articlesMock } from "../../data";
+import FakeArticleContainer from "../../components/FakeArticleContainer";
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -38,5 +39,12 @@ describe("ArticleContainer Loading...", () => {
   it("should display 'Loading...'", () => {
     const wrapper = shallow(<ArticleContainer loading={true} />);
     expect(wrapper.find("div").text()).to.equal("Loading...");
+  });
+
+  it("should render FakeArticleList", () => {
+    const wrapper = shallow(<ArticleContainer articles={[]} loading={true} />, {
+      disableLifecycleMethods: true,
+    });
+    expect(wrapper.find(FakeArticleContainer).length).to.equal(1);
   });
 });

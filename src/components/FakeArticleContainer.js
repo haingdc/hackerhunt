@@ -1,9 +1,12 @@
 import React, { Component } from "react";
+import FakeArticle from "./FakeArticle";
 
-class FakeArticleContainer extends Component {
-  render() {
-    return <div>FakeArticleList here</div>;
-  }
+export default function FakeArticleContainer({ number = 5 }) {
+  return (
+    <div>
+      {Array.from(Array(number)).map((article, i) => {
+        return <FakeArticle key={i} />;
+      })}
+    </div>
+  );
 }
-
-export default FakeArticleContainer;

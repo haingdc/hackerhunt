@@ -18,7 +18,11 @@ class Home extends Component {
   fetchArticles(page) {
     API.getArticles(page)
       .then(res => {
-        this.setState({ articles: res.data.data, page: page });
+        this.setState({
+          articles: res.data.data,
+          page: page,
+          loading: false,
+        });
       })
       .catch(err => {
         if (err.message === "Network Error") {
@@ -36,7 +40,7 @@ class Home extends Component {
   };
 
   render() {
-    const { articles, page } = this.state;
+    const { articles, page, loading } = this.state;
     return (
       <React.Fragment>
         <TopicList topics={topics} />
@@ -45,6 +49,7 @@ class Home extends Component {
           page={page}
           fetchArticles={this.fetchArticles}
           previousDays={this.previousDays}
+          loading={loading}
         />
       </React.Fragment>
     );

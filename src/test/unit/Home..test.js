@@ -48,4 +48,9 @@ describe("Home", () => {
     fetchSpy.restore();
     didMountSpy.restore();
   });
+
+  it("should have loading state is true", () => {
+    const wrapper = shallow(<Home />);
+    expect(wrapper.state("loading")).to.equal(true);
+  });
 });

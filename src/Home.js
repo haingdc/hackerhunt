@@ -7,7 +7,7 @@ import * as API from "./api/index";
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = { articles: [], page: 0, errors: {} };
+    this.state = { articles: [], page: 0, errors: {}, loading: true };
     this.fetchArticles = this.fetchArticles.bind(this);
   }
 

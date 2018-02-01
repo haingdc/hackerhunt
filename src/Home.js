@@ -18,8 +18,6 @@ class Home extends Component {
   fetchArticles(page) {
     API.getArticles(page)
       .then(res => {
-        // setTimeout(() => {
-        // }, 5000);
         this.setState({ articles: res.data.data, page: page });
       })
       .catch(err => {

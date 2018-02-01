@@ -36,11 +36,6 @@ describe("ArticleContainer Loading...", () => {
     expect(wrapper.prop("loading")).to.equal(undefined);
   });
 
-  it("should display 'Loading...'", () => {
-    const wrapper = shallow(<ArticleContainer loading={true} />);
-    expect(wrapper.find("div").text()).to.equal("Loading...");
-  });
-
   it("should render FakeArticleList", () => {
     const wrapper = shallow(<ArticleContainer articles={[]} loading={true} />, {
       disableLifecycleMethods: true,

@@ -1,6 +1,6 @@
 import raf from "./tempPolyfills";
 import React from "react";
-import Enzyme, { shallow } from "enzyme";
+import Enzyme, { shallow, mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import { expect } from "chai";
 import sinon from "sinon";
@@ -51,6 +51,14 @@ describe("Home", () => {
 
   it("should have loading state is true", () => {
     const wrapper = shallow(<Home />);
+    expect(wrapper.state("loading")).to.equal(true);
+  });
+
+  it("fetchArticles will set loading to true", () => {
+    const wrapper = shallow(<Home />, {
+      disableLifecycleMethods: true,
+    });
+    wrapper.instance().fetchArticles(0);
     expect(wrapper.state("loading")).to.equal(true);
   });
 });

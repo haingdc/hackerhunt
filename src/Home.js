@@ -7,7 +7,7 @@ import * as API from "./api/index";
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = { articles: [], page: 0, errors: {}, loading: true };
+    this.state = { articles: [], page: 0, errors: {}, loading: false };
     this.fetchArticles = this.fetchArticles.bind(this);
   }
 
@@ -18,6 +18,8 @@ class Home extends Component {
   fetchArticles(page) {
     API.getArticles(page)
       .then(res => {
+        // setTimeout(() => {
+        // }, 5000);
         this.setState({ articles: res.data.data, page: page });
       })
       .catch(err => {
@@ -27,6 +29,7 @@ class Home extends Component {
           this.setState({ errors });
         }
       });
+    this.setState({ loading: true });
   }
 
   previousDays = () => {
